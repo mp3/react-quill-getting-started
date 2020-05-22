@@ -5,7 +5,7 @@
   "repository": "git@github.com:mp3/react-quill-getting-started.git",
   "author": "mp3 <im.in.a.coma.xxx@gmail.com>",
   "license": "MIT",
-  :"scripts": {
+  "scripts": {
     "dev": "webpack-dev-server",
     "build": "webpack --mode production",
     "typecheck": "tsc -p . --noEmit",
