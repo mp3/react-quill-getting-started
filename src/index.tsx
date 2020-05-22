@@ -1,9 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import 'react-quill/dist/quill.snow.css'
+import ReactQuill from 'react-quill'
 
 const Main = () => {
+  const [value, setValue] = React.useState('')
+
   return (
-    <div>Hello, world</div>
+    <ReactQuill theme="snow" value={value} onChange={setValue} />
   )
 }
 
