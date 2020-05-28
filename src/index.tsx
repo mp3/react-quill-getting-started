@@ -1,5 +1,5 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import { h, render } from 'preact'
+import { useState, useEffect } from 'preact/hooks'
 import 'react-quill/dist/quill.core.css'
 import 'react-quill/dist/quill.bubble.css'
 import ReactQuill from 'react-quill'
@@ -7,9 +7,9 @@ import styled from 'styled-components'
 import { CustomToolbarExample } from './components/CustomToolbarExample'
 
 const Main = () => {
-  const [value, setValue] = React.useState('')
+  const [value, setValue] = useState('')
 
-  React.useEffect(() => {
+  useEffect(() => {
     console.log(value)
   }, [value])
 
@@ -29,4 +29,7 @@ const Container = styled.div`
   border: 1px solid #ccc;
 `
 
-ReactDOM.render(<Main />, document.getElementById('root'))
+const root = document.getElementById('root')
+if (root) {
+  render(<Main />, root)
+}

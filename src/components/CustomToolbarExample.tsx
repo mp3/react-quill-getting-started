@@ -1,4 +1,5 @@
-import React from 'react'
+import { h } from 'preact'
+import { useState } from 'preact/hooks'
 import ReactQuill from 'react-quill'
 
 const StarButton = () => <span className="octicon octicon-star" />
@@ -45,7 +46,7 @@ const CustomToolbar = () => (
 )
 
 export const CustomToolbarExample = () => {
-  const [editorHtml, setEditorHtml] = React.useState('')
+  const [editorHtml, setEditorHtml] = useState('')
 
   const handleChange = (html) => {
     setEditorHtml(html)
