@@ -1,11 +1,19 @@
 import React from 'react'
 import ReactQuill from 'react-quill'
 
-const CustomButton = () => <span className="octicon octicon-star" />
+const StarButton = () => <span className="octicon octicon-star" />
+
+const NewLineButton = () => <span>new line</span>
 
 function insertStar() {
   const cursorPosition = this.quill.getSelection().index
   this.quill.insertText(cursorPosition, "★")
+  this.quill.setSelection(cursorPosition + 1)
+}
+
+function insertNewLine() {
+  const cursorPosition = this.quill.getSelection().index
+  this.quill.insertText(cursorPosition, '\n')
   this.quill.setSelection(cursorPosition + 1)
 }
 
@@ -28,7 +36,10 @@ const CustomToolbar = () => (
       <option></option>
     </select>
     <button className="ql-insertStar">
-      <CustomButton />
+      <StarButton />
+    </button>
+    <button className="ql-insertNewLine">
+      <NewLineButton />
     </button>
   </div>
 )
@@ -45,6 +56,7 @@ export const CustomToolbarExample = () => {
       container: "#toolbar",
       handlers: {
         "insertStar": insertStar,
+        "insertNewLine": insertNewLine
       }
     }
   }

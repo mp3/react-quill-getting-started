@@ -1,8 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import 'react-quill/dist/quill.core.css'
 import 'react-quill/dist/quill.bubble.css'
 import ReactQuill from 'react-quill'
 import styled from 'styled-components'
+import { CustomToolbarExample } from './components/CustomToolbarExample'
 
 const Main = () => {
   const [value, setValue] = React.useState('')
@@ -13,7 +15,12 @@ const Main = () => {
 
   return (
     <Container>
-      <ReactQuill theme="bubble" value={value} onChange={setValue} />
+      <CustomToolbarExample />
+      <ReactQuill
+        theme={null}
+        value={value}
+        onChange={setValue}
+      />
     </Container>
   )
 }
